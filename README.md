@@ -16,7 +16,7 @@
 
 | Method | Endpoint  | Access |
 |--|--|--|
-| POST | /user | Admin |
+| POST | /movie | Admin |
 
 
 #### Case 1 : Valid input with token
@@ -226,7 +226,7 @@
 
 | Method | Endpoint  | Access |
 |--|--|--|
-| DELETE | /user | Admin |
+| DELETE | /movie | Admin |
 
 
 #### Case 1 : Valid input with token
@@ -274,5 +274,330 @@
 {
     "status": 200,
     "result": "Specified record does not exists",
+}
+```
+
+---
+### Update Movie
+
+| Method | Endpoint  | Access |
+|--|--|--|
+| PUT | /movie | Admin |
+
+
+#### Case 1 : Valid input with token
+
+#### Request
+
+```json
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im",
+    "data": {
+        "id":40,
+        "description":"New Description",
+        "rating": 3.6
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 200,
+    "result": "Updated record",
+    "record": {
+        "id": 40,
+        "description": "New Description",
+        "rating": 3.6
+    }
+}
+```
+
+#### Case 2 : Not Existing Movie
+
+#### Request
+
+```json
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im",
+    "data": {
+        "id":400,
+        "description":"New Description",
+        "rating": 3.6,
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 200,
+    "result": "Specified record does not exists",
+}
+```
+
+#### Case 3 : Invalid Data
+
+#### Request
+
+```json
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im",
+    "data": {
+        "id":40,
+        "description":"New Description",
+        "rating": 13.6,
+        "year": 20122
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 400,
+    "result": "Invalid Data",
+    "record": [
+        {
+            "rating": 13.6,
+            "message": "Rating value should be between 0 - 5"
+        },
+        {
+            "year": 20122,
+            "message": "Year value should be between 1980 - current year"
+        }
+    ]
+}
+```
+
+---
+### Fetch Movies
+
+| Method | Endpoint  | Access |
+|--|--|--|
+| GET | /movie | Admin/RegisterdUser |
+
+
+#### Case 1 : Valid input with token
+
+#### Request - Parameters
+
+`token` = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im`
+`title` = `man`
+
+
+#### Response
+
+```json
+{
+    "status": 200,
+    "result": "Success fetching movie details",
+    "record": [
+        {
+            "title": "Spider-Man",
+            "description": "Spider-Man is a super hero movie",
+            "rating": 4.1,
+            "year": 2012
+        },
+        {
+            "title": "Batman Begins",
+            "description": "After witnessing his parents' death, Bruce learns the art of fighting to confront injustice. When he returns to Gotham as Batman, he must stop a secret society that intends to destroy the city.",
+            "rating": 4.4,
+            "year": 2005
+        },
+        {
+            "title": "Man of Steel",
+            "description": "After Superman discovers that he has extraordinary powers, he decides to use them for doing good. He even fights against members of his own race to defend the people of Earth.",
+            "rating": 4.2,
+            "year": 2013
+        },
+        {
+            "title": "Batman v Superman: Dawn of Justice",
+            "description": "Bruce Wayne, a billionaire, believes that Superman is a threat to humanity after his battle in Metropolis. Thus, he decides to adopt his mantle of Batman and defeat him once and for all.",
+            "rating": 4.6,
+            "year": 2016
+        }
+    ]
+}
+```
+
+#### Case 2 : Empty Result set
+
+#### Request
+
+`token` = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im`
+`title` = `xyz`
+
+#### Response
+
+```json
+{
+    "status": 200,
+    "result": "Empty result-set"
+}
+```
+
+#### Case 3 : Invalid Data
+
+#### Request
+
+```json
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im",
+    "data": {
+        "id":40,
+        "description":"New Description",
+        "rating": 13.6,
+        "year": 20122
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 400,
+    "result": "Invalid Data",
+    "record": [
+        {
+            "rating": 13.6,
+            "message": "Rating value should be between 0 - 5"
+        },
+        {
+            "year": 20122,
+            "message": "Year value should be between 1980 - current year"
+        }
+    ]
+}
+```
+
+## User Management Module
+
+### Add User
+
+| Method | Endpoint  | Access |
+|--|--|--|
+| POST | /user | Admin |
+
+
+#### Case 1 : Valid input
+
+#### Request
+
+```json
+{
+    "email":"admin@gmail.com",
+    "password":"admin",
+    "data": {
+        "email":"jhon@gmail.com",
+        "password":"jhon",
+        "is_admin":false
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 200,
+    "result": "Added new record",
+    "record": {
+        "email": "jhon@gmail.com",
+        "is_admin": false
+    },
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+}
+```
+
+#### Case 2 : User already exists
+
+#### Request
+
+```json
+{
+    "email":"admin@gmail.com",
+    "password":"admin",
+    "data": {
+        "email":"jhon@gmail.com",
+        "password":"jhon",
+        "is_admin":false
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 400,
+    "result": {
+        "email": [
+            "users with this email already exists."
+        ]
+    },
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+}
+```
+
+### Delete User
+
+| Method | Endpoint  | Access |
+|--|--|--|
+| DELETE | /user | Admin |
+
+
+#### Case 1 : Valid input
+
+#### Request
+
+```json
+{
+    "email":"admin@gmail.com",
+    "password":"admin",
+    "data": {
+        "email":"jhon12@gmail.com"
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 200,
+    "result": "Deleted record",
+    "record": {
+        "email": "jhon12@gmail.com"
+    },
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+}
+```
+
+#### Case 2 : User does not exists
+
+#### Request
+
+```json
+{
+    "email":"admin@gmail.com",
+    "password":"admin",
+    "data": {
+        "email":"xyz@gmail.com",
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 400,
+    "result": "Specified record does not exists",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
 }
 ```
