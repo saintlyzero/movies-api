@@ -12,7 +12,7 @@
 
 ## Movie Module
 
-### Add User
+### Add Movie
 
 | Method | Endpoint  | Access |
 |--|--|--|
@@ -104,7 +104,7 @@
         "title": [
             "movies with this title already exists."
         ]
-    }
+    },
     "record": {
         "title": "Justice League",
         "id": 25
@@ -170,7 +170,7 @@
 ```json
 {
     "email":"jhon@gmail.com",
-    "password":"jhon"
+    "password":"jhon",
     "data": {
         "title":"Justice League",
         "description":"Steppenwolf and his Parademons set out to take over the Earth.",
@@ -218,5 +218,61 @@
             "Ensure this value is less than or equal to 2019."
         ]
     }
+}
+```
+
+---
+### Delete Movie
+
+| Method | Endpoint  | Access |
+|--|--|--|
+| DELETE | /user | Admin |
+
+
+#### Case 1 : Valid input with token
+
+#### Request
+
+```json
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im",
+    "data": {
+        "id": 39
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 200,
+    "result": "Deleted record",
+    "record": {
+        "title": "test",
+        "id": 39
+    },
+}
+```
+
+#### Case 2 : Not Existing Movie
+
+#### Request
+
+```json
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im",
+    "data": {
+        "id": 39
+    }
+}
+```
+
+#### Response
+
+```json
+{
+    "status": 200,
+    "result": "Specified record does not exists",
 }
 ```
