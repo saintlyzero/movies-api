@@ -17,7 +17,7 @@ class MovieController(APIView):
     """
         This View handles all Movie related operations
 
-        http://127.0.0.1:8000/movie
+        path : /movie
     """
 
     def post(self, request):

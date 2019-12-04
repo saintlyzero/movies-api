@@ -25,7 +25,7 @@ SECRET_KEY = 'ztu@tpev=x=@*n!@gqv#h(e1)%l*-zb(eb0iu-=w4qczn98o&1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
