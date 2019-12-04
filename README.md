@@ -1,10 +1,11 @@
 # Movie API
 
-RESTful web service to obtain movie information created using Django Restframework
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django?color=green)
+![GitHub top language](https://img.shields.io/github/languages/top/saintlyzero/movies-api)
 
-![GitHub top language](https://img.shields.io/github/languages/top/saintlyzero/NestedFetch)
-## Postman Documentaion : [link](https://documenter.getpostman.com/view/8879912/SWE3beS5)
-![enter image description here](https://icon-library.net/images/postman-icon/postman-icon-6.jpg)
+RESTful web service to obtain movie information created using Django Restframework<br>
+Postman Documentaion : [link](https://documenter.getpostman.com/view/8879912/SWE3beS5)
+
 
 | Module | Method | Desciption | Endpoint | Usage | Access |
 |--|--|--|--|--|--|
