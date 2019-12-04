@@ -1,14 +1,14 @@
 # Movie API
 
 
-| Module | Method | Desciption | Endpoint | Details | Access |
+| Module | Method | Desciption | Endpoint | Usage | Access |
 |--|--|--|--|--|--|
-| User Management | `POST` | Adds new user | `/user` | Details | Admin |
-| User Management | `DELETE` | Deletes specified user | `/user` | Details | Admin |
-| Movie | `POST` | Adds new movie | `/movie` | Details | Admin |
-| Movie | `DELETE` | Deletes specified movie | `/movie` | Details | Admin |
-| Movie | `PUT` | Updates specified movie | `/movie` | Details | Admin |
-| Movie | `GET` | Fetches movie details matching specified keyword | `/movie` | Details | Admin/Registered User |
+| User Management | `POST` | Adds new user | `/user` | [Details](#add-movie) | Admin |
+| User Management | `DELETE` | Deletes specified user | `/user` | [Details](#delete-movie) | Admin |
+| Movie | `POST` | Adds new movie | `/movie` | [Details](#update-movie) | Admin |
+| Movie | `DELETE` | Deletes specified movie | `/movie` | [Details](#fetch-movie) | Admin |
+| Movie | `PUT` | Updates specified movie | `/movie` | [Details](#add-user) | Admin |
+| Movie | `GET` | Fetches movie details matching specified keyword | `/movie` | [Details](#delete-user) | Admin/Registered User |
 
 ## Movie Module
 
