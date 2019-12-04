@@ -3,12 +3,12 @@
 
 | Module | Method | Desciption | Endpoint | Usage | Access |
 |--|--|--|--|--|--|
-| User Management | `POST` | Adds new user | `/user` | [Details](#add-movie) | Admin |
-| User Management | `DELETE` | Deletes specified user | `/user` | [Details](#delete-movie) | Admin |
-| Movie | `POST` | Adds new movie | `/movie` | [Details](#update-movie) | Admin |
-| Movie | `DELETE` | Deletes specified movie | `/movie` | [Details](#fetch-movie) | Admin |
-| Movie | `PUT` | Updates specified movie | `/movie` | [Details](#add-user) | Admin |
-| Movie | `GET` | Fetches movie details matching specified keyword | `/movie` | [Details](#delete-user) | Admin/Registered User |
+| User Management | `POST` | Adds new user | http://34.93.43.145:8000/user | [Details](#add-user) | Admin |
+| User Management | `DELETE` | Deletes specified user | http://34.93.43.145:8000/user | [Details](#delete-user) | Admin |
+| Movie | `POST` | Adds new movie | http://34.93.43.145:8000/movie | [Details](#add-movie) | Admin |
+| Movie | `DELETE` | Deletes specified movie | http://34.93.43.145:8000/movie | [Details](#delete-movie) | Admin |
+| Movie | `PUT` | Updates specified movie | http://34.93.43.145:8000/movie | [Details](#update-user) | Admin |
+| Movie | `GET` | Fetches movie details matching specified keyword | http://34.93.43.145:8000/movie | [Details](#fetch-user) | Admin/Registered User |
 
 ## Movie Module
 
