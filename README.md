@@ -3,12 +3,12 @@
 
 | Module | Method | Desciption | Endpoint | Details | Access |
 |--|--|--|--|--|--|
-| User Management | POST | Adds new user | /user | Details | Admin |
-| User Management | DELETE | Deletes specified user | /user | Details | Admin |
-| Movie | POST | Adds new movie | /movie | Details | Admin |
-| Movie | DELETE | Deletes specified movie | /movie | Details | Admin |
-| Movie | PUT | Updates specified movie | /movie | Details | Admin |
-| Movie | GET | Fetches movie details matching specified keyword | /movie | Details | Admin/Registered User |
+| User Management | `POST` | Adds new user | `/user` | Details | Admin |
+| User Management | `DELETE` | Deletes specified user | `/user` | Details | Admin |
+| Movie | `POST` | Adds new movie | `/movie` | Details | Admin |
+| Movie | `DELETE` | Deletes specified movie | `/movie` | Details | Admin |
+| Movie | `PUT` | Updates specified movie | `/movie` | Details | Admin |
+| Movie | `GET` | Fetches movie details matching specified keyword | `/movie` | Details | Admin/Registered User |
 
 ## Movie Module
 
@@ -16,7 +16,7 @@
 
 | Method | Endpoint  | Access |
 |--|--|--|
-| POST | /movie | Admin |
+| `POST` | `/movie` | Admin |
 
 
 #### Case 1 : Valid input with token
@@ -226,7 +226,7 @@
 
 | Method | Endpoint  | Access |
 |--|--|--|
-| DELETE | /movie | Admin |
+| `DELETE` | `/movie` | Admin |
 
 
 #### Case 1 : Valid input with token
@@ -282,7 +282,7 @@
 
 | Method | Endpoint  | Access |
 |--|--|--|
-| PUT | /movie | Admin |
+| `PUT` | `/movie` | Admin |
 
 
 #### Case 1 : Valid input with token
@@ -378,7 +378,7 @@
 
 | Method | Endpoint  | Access |
 |--|--|--|
-| GET | /movie | Admin/RegisterdUser |
+| `GET` | `/movie` | Admin/RegisterdUser |
 
 
 #### Case 1 : Valid input with token
@@ -481,7 +481,7 @@
 
 | Method | Endpoint  | Access |
 |--|--|--|
-| POST | /user | Admin |
+| `POST` | `/user` | Admin |
 
 
 #### Case 1 : Valid input
@@ -548,7 +548,7 @@
 
 | Method | Endpoint  | Access |
 |--|--|--|
-| DELETE | /user | Admin |
+| `DELETE` | `/user` | Admin |
 
 
 #### Case 1 : Valid input
